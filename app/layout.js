@@ -1,16 +1,27 @@
 import localFont from "next/font/local";
+import {Barlow} from "next/font/google"
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+
+const barlow = Barlow({
+  weight: ['400', '600','700'],
+  subsets:['latin'],
+  display: 'swap',
+  style: 'normal',
+  variable: '--font-barlow',
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        
       >
         {children}
       </body>
